@@ -14,7 +14,7 @@ window.onload = function(){
     document.getElementById("testjsonbutton").onclick = function(){
         //wait for response from fetch
         fetch("/rest/test/json").then(function(response){
-            //Wait for response to be parsed as text
+            //Wait for response to be parsed as json
             response.json().then(function(json){
                 console.log(json);
                 document.getElementById("outputDiv").innerHTML = json.text;
