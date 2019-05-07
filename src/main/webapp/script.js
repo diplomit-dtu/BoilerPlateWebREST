@@ -22,5 +22,16 @@ window.onload = function(){
         })
 
     };
+    document.getElementById("testmysqlbutton").onclick = function(){
+        //wait for response from fetch
+        fetch("/rest/test/mysql").then(function(response){
+            //Wait for response to be parsed as json
+            response.text().then(function(text){
+                console.log(text);
+                document.getElementById("outputDiv").innerHTML = text;
+            })
+        })
+
+    };
 
 };
