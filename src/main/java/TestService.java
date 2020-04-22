@@ -11,6 +11,7 @@ import java.sql.Statement;
 public class TestService {
     MySQLConnector conn = MySQLConnector.getInstance();
 
+    @Path("hello")
     @GET
     public String getTest(){
         return "Hello World";

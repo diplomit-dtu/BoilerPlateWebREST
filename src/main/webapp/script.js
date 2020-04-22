@@ -3,7 +3,7 @@ window.onload = function(){
     //Attach clickHandler
     document.getElementById("testbutton").onclick = function(){
         //wait for response from fetch
-        fetch("/BoilerPlate_war_exploded/rest/test").then(function(response){
+        fetch("/BoilerPlate_war_exploded/rest/test/hello").then(function(response){
             //Wait for response to be parsed as text
             response.text().then(function(text){
                 document.getElementById("outputDiv").innerHTML = text;

@@ -5,12 +5,16 @@ import java.sql.SQLException;
 public class MySQLConnector {
     private static MySQLConnector connector;
     private Connection connection;
+    private String host = "runerne.dk";
+    private String username = "kamel";
+    private String password = "dreng";
+    private String database = "databaseProjekt";
+    private int port = 8003;
 
     private MySQLConnector() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://ec2-52-30-211-3.eu-west-1.compute.amazonaws.com/db02327?"
-            + "user=db02327&password=db02327");
+            connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database + "?user="+username+"&password="+password+"&characterEncoding=latin1"+"&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
             System.out.println("MySQL Connection established");
         } catch (SQLException e) {
             e.printStackTrace();
