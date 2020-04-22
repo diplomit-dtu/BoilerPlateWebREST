@@ -25,7 +25,7 @@ public class UserDAOSerialisering implements IUserDAO{
     public MapSerialisering readUserList(){
         MapSerialisering temp = null;
         try{
-            FileInputStream fileInputStream = new FileInputStream("CDIO1/src/data/users.data");
+            FileInputStream fileInputStream = new FileInputStream("src/main/java/Data/users.data");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             temp = (MapSerialisering) objectInputStream.readObject();
             fileInputStream.close();
@@ -38,7 +38,7 @@ public class UserDAOSerialisering implements IUserDAO{
 
     public void writeUserList(MapSerialisering savethisList){
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("CDIO1/src/data/users.data");
+            FileOutputStream fileOutputStream = new FileOutputStream("src/main/java/Data/users.data");
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(savethisList);
             objectOutputStream.flush();
