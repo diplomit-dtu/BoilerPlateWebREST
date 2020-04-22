@@ -3,11 +3,12 @@ package dal;
 import services.SQLDatabaseIO;
 import dto.UserDTO;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 public class UserDAOSQL implements IUserDAO {
     SQLDatabaseIO db = new SQLDatabaseIO("kamel", "dreng", "runerne.dk", 8003); //Makes new SQLDatabaseIO object.
 
